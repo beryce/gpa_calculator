@@ -12,6 +12,25 @@ function emptyBox(idName) {
   document.getElementById(idName).style.color = "black";
 }
 
+function deletethisRow(row) {
+  var i = row.parentNode.parentNode.rowIndex;
+  document.getElementById("maintable").deleteRow(i);
+}
+
+// var deleteCounter = 0;
+// function numDeleted() {
+//   var deleteCounter = deleteCounter + 1;
+//   console.log("deleteCounter:");
+//   console.log(deleteCounter);
+//   return deleteCounter;
+// }
+
+// function coursesTotal() {
+//   numDeletedRows = numDeleted();
+//   var totalCourses = 4 - numDeleted;
+//   return totalCourses;
+// }
+
 function calculate() {
   // Dictionary for grade conversions
   var numCourses = 4; // Change later to account for people with more than four classes
@@ -25,7 +44,8 @@ function calculate() {
     C: 2.0,
     Cmin: 1.67,
     D: 1.0,
-    F: 0
+    F: 0,
+    Select: 0
   };
 
   var i;
@@ -34,7 +54,11 @@ function calculate() {
   for (i = 1; i < numCourses + 1; i++) {
     // Getting the numeric GPA value
     var currentForm = document.getElementById("form" + i.toString());
+    console.log("currentForm:");
+    console.log(currentForm);
     var optionChosen = currentForm.options[currentForm.selectedIndex].value;
+    console.log("optionChosen:");
+    console.log(optionChosen);
     var grade = gradeConversions[optionChosen];
 
     // Getting the input typed in credit hours box
@@ -49,7 +73,16 @@ function calculate() {
     totalQualPoints = totalQualPoints + qualityPoints;
   }
   var currentGPA = (totalQualPoints / totalCredits).toPrecision(6);
-  document.getElementById("gpa").innerHTML = currentGPA;
+  console.log("currentGPA:");
+  console.log(currentGPA);
+
+  // If none of the slots were filled out, return error message
+  if (isNaN(currentGPA)) {
+    document.getElementById("gpa").innerHTML =
+      "Select a grade and enter the amount of credit hours received";
+  } else {
+    document.getElementById("gpa").innerHTML = currentGPA;
+  }
   // document.getElementById("gpa").style.display = "compact";
 }
 
