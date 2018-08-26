@@ -1,0 +1,61 @@
+.jumbotron {
+  background-color: rgb(14, 89, 250);
+  color: white;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  color: rgb(9, 44, 158);
+}
+
+.course-input {
+  color: lightgray;
+}
+
+.credit-input {
+  color: lightgray;
+}
+
+nav {
+  margin-bottom: -75px;
+  margin-left: 75px;
+}
+
+.menu {
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 100px;
+  margin-left: 5px;
+  color: white;
+}
+
+.submitbuttons {
+  display: inline-block;
+  margin-left: -30px;
+}
+
+#current-gpa {
+  margin-left: 10px;
+}
+
+.menu:hover {
+  text-shadow: 1px 1px 2px lightblue;
+}
+
+#search {
+  float: right;
+  margin-top: -50px;
+  margin-right: -275px;
+  color: lightgray;
+}
+
+#buttonsearch {
+  float: right;
+  margin-left: -100px;
+  margin-right: -306px;
+  margin-top: -50px;
+}
+
+#searchsection {
+  width: 75%;
+}
