@@ -60,7 +60,7 @@
 
 <body>
     <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" id="maintable">
             <thead>
                 <tr>
                     <th>Course Name</th>
@@ -75,57 +75,7 @@
                     </td>
                     <td>
                         <select class="form-control" id="form1">
-                            <!-- <option value="Select..." ">Select...</option> -->
-                            <option value="A ">A (4.00)</option>
-                            <option value="Amin ">A- (3.67)</option>
-                            <option value="Bplus ">B+ (3.33)</option>
-                            <option value="B ">B (3.00)</option>
-                            <option value="Bmin ">B- (2.67)</option>
-                            <option value="Cplus ">C+ (2.33)</option>
-                            <option value="C ">C (2.00)</option>
-                            <option value="Cmin ">C- (1.67)</option>
-                            <option value="D ">D (1.00)</option>
-                            <option value="F ">F (0.00)</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit1" onClick="emptyBox('credit1')">
-                        <button type="button " class="btn btn-outline-danger btn-sm ">
-                            <i class="fa fa-trash "></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text " value="Course name..." class="course-input" id="course2" onClick="emptyBox('course2') ">
-                    </td>
-                    <td>
-                        <select class="form-control " id="form2">
-                            <option value="A">A (4.00)</option>
-                            <option value="Amin ">A- (3.67)</option>
-                            <option value="Bplus ">B+ (3.33)</option>
-                            <option value="B">B (3.00)</option>
-                            <option value="Bmin ">B- (2.67)</option>
-                            <option value="Cplus ">C+ (2.33)</option>
-                            <option value="C">C (2.00)</option>
-                            <option value="Cmin ">C- (1.67)</option>
-                            <option value="D">D (1.00)</option>
-                            <option value="F">F (0.00)</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit2" onClick="emptyBox('credit2')">
-                        <button type="button" class="btn btn-outline-danger btn-sm ">
-                            <i class="fa fa-trash "></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" value="Course name..." class="course-input" id="course3" onClick="emptyBox('course3') ">
-                    </td>
-                    <td>
-                        <select class="form-control" id="form3">
+                            <option value="Select">Select...</option>
                             <option value="A">A (4.00)</option>
                             <option value="Amin">A- (3.67)</option>
                             <option value="Bplus">B+ (3.33)</option>
@@ -139,9 +89,61 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit3" onClick="emptyBox('credit3')">
-                        <button type="button " class="btn btn-outline-danger btn-sm ">
-                            <i class="fa fa-trash "></i>
+                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit1" onClick="emptyBox('credit1')">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                            <i class=" fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value="Course name..." class="course-input" id="course2" onClick="emptyBox('course2')">
+                    </td>
+                    <td>
+                        <select class="form-control" id="form2">
+                            <option value="Select">Select...</option>
+                            <option value="A">A (4.00)</option>
+                            <option value="Amin">A- (3.67)</option>
+                            <option value="Bplus">B+ (3.33)</option>
+                            <option value="B">B (3.00)</option>
+                            <option value="Bmin">B- (2.67)</option>
+                            <option value="Cplus">C+ (2.33)</option>
+                            <option value="C">C (2.00)</option>
+                            <option value="Cmin">C- (1.67)</option>
+                            <option value="D">D (1.00)</option>
+                            <option value="F">F (0.00)</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input " id="credit2" onClick="emptyBox('credit2')">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" value="Course name..." class="course-input" id="course3" onClick="emptyBox('course3')">
+                    </td>
+                    <td>
+                        <select class="form-control" id="form3">
+                            <option value="Select">Select...</option>
+                            <option value="A">A (4.00)</option>
+                            <option value="Amin">A- (3.67)</option>
+                            <option value="Bplus">B+ (3.33)</option>
+                            <option value="B">B (3.00)</option>
+                            <option value="Bmin">B- (2.67)</option>
+                            <option value="Cplus">C+ (2.33)</option>
+                            <option value="C">C (2.00)</option>
+                            <option value="Cmin">C- (1.67)</option>
+                            <option value="D">D (1.00)</option>
+                            <option value="F">F (0.00)</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit3" onClick="emptyBox( 'credit3')">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                            <i class="fa fa-trash"></i>
                         </button>
                     </td>
                 </tr>
@@ -150,7 +152,8 @@
                         <input type="text" value="Course name..." class="course-input" id="course4" onClick="emptyBox('course4')">
                     </td>
                     <td>
-                        <select class="form-control " id="form4">
+                        <select class="form-control" id="form4">
+                            <option value="Select">Select...</option>
                             <option value="A">A (4.00)</option>
                             <option value="Amin">A- (3.67)</option>
                             <option value="Bplus">B+ (3.33)</option>
@@ -164,9 +167,9 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit4" onClick="emptyBox('credit4') ">
-                        <button type="button " class="btn btn-outline-danger btn-sm ">
-                            <i class="fa fa-trash "></i>
+                        <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit4" onClick="emptyBox('credit4')">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                            <i class="fa fa-trash"></i>
                         </button>
                     </td>
                 </tr>
@@ -174,7 +177,7 @@
         </table>
     </div>
 
-    <div id="current-gpa ">
+    <div id="current-gpa">
         <b>Current GPA:</b> <span id="gpa">
     </div>
 
@@ -182,16 +185,16 @@
 
     <div id="response-buttons">
         <ul>
-            <li class="submitbuttons ">
-                <button type="button " class="btn btn-success " onClick="calculate() ">Submit</button>
-                <button type="button " class="btn btn-primary ">Add another class</button>
-                <button type="button " class="btn btn-danger " onClick="reset() ">Reset</button>
+            <li class="submitbuttons">
+                <button type="button" class="btn btn-success" onClick="calculate()">Submit</button>
+                <button type="button" class="btn btn-primary">Add another class</button>
+                <button type="button" class="btn btn-danger" onClick="reset()">Reset</button>
             </li>
         </ul>
 
     </div>
 
-    <script src="GPAcalcjs.js "></script>
+    <script src="GPAcalcjs.js"></script>
 
 </body>
 
