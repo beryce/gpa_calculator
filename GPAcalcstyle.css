@@ -18,14 +18,14 @@ body {
 
 nav {
   margin-bottom: -75px;
-  margin-left: 75px;
+  margin-left: 250px;
 }
 
 .menu {
   display: inline-block;
   margin-top: 25px;
-  margin-right: 100px;
-  margin-left: 5px;
+  margin-right: 105px;
+  margin-left: 10px;
   color: white;
 }
 
@@ -58,4 +58,8 @@ nav {
 
 #searchsection {
   width: 75%;
+}
+
+#trash {
+  margin-left: 5px;
 }
