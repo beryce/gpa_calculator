@@ -33,7 +33,9 @@ function deletethisRow(row) {
 
 function calculate() {
   // Dictionary for grade conversions
-  var numCourses = 4; // Change later to account for people with more than four classes
+  var numCourses = 4;
+  console.log("numCourses:");
+  console.log(numCourses); // Change later to account for people with more than four classes
   var gradeConversions = {
     A: 4.0,
     Amin: 3.67, // Amin = A-
@@ -53,6 +55,8 @@ function calculate() {
   var totalCredits = 0;
   for (i = 1; i < numCourses + 1; i++) {
     // Getting the numeric GPA value
+    console.log("i:");
+    console.log(i);
     var currentForm = document.getElementById("form" + i.toString());
     console.log("currentForm:");
     console.log(currentForm);
@@ -98,4 +102,55 @@ function reset() {
     // Go back to first option in the drop down
     document.getElementById("form" + i).selectedIndex = 0;
   }
+}
+
+function addRow() {
+  var row = document.createElement("tr");
+  var col = document.createElement("td");
+  var col2 = document.createElement("td");
+  var col3 = document.createElement("td");
+
+  var cell1 = row.insertCell(0);
+  var classtitle = document.createElement("input");
+  classtitle.setAttribute("type", "text");
+  classtitle.setAttribute("value", "Course name...");
+  cell1.appendChild(classtitle);
+
+  var cell2 = row.insertCell(1);
+  var gradeselect = document.createElement("SELECT");
+
+  var gradelist = [
+    "Select...",
+    "A (4.00)",
+    "A- (3.67)",
+    "B+ (3.33)",
+    "B (3.00)",
+    "B- (2.67)",
+    "C+ (2.33)",
+    "C (2.00)",
+    "C- (1.67)",
+    "D (1.00)",
+    "F (0.00)"
+  ];
+
+  var g;
+  var index = 0;
+  for (g = 0; g < gradelist.length; g++) {
+    var option = document.createElement("option");
+    option.text = gradelist[g];
+    gradeselect.add(option, index);
+    index = index + 1;
+  }
+  cell2.appendChild(gradeselect);
+
+  var cell3 = row.insertCell(2);
+  var credit = document.createElement("input");
+  credit.setAttribute("type", "text");
+  credit.setAttribute("value", "Credit Hours (ex. 1.25)");
+  cell3.appendChild(credit);
+
+  col2.innerHTML = "Select...";
+  col3.innerHTML = "Credit hours (ex. 1.25)";
+  var table = document.getElementById("maintable");
+  table.appendChild(row);
 }
