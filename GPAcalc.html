@@ -90,7 +90,7 @@
                     </td>
                     <td>
                         <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit1" onClick="emptyBox('credit1')">
-                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow('1')">
                             <i class=" fa fa-trash"></i>
                         </button>
                     </td>
@@ -116,7 +116,7 @@
                     </td>
                     <td>
                         <input type="text" value="Credit hours (ex. 1.25)" class="credit-input " id="credit2" onClick="emptyBox('credit2')">
-                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow('2')">
                             <i class="fa fa-trash"></i>
                         </button>
                     </td>
@@ -142,7 +142,7 @@
                     </td>
                     <td>
                         <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit3" onClick="emptyBox( 'credit3')">
-                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow('3')">
                             <i class="fa fa-trash"></i>
                         </button>
                     </td>
@@ -168,7 +168,7 @@
                     </td>
                     <td>
                         <input type="text" value="Credit hours (ex. 1.25)" class="credit-input" id="credit4" onClick="emptyBox('credit4')">
-                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow(this)">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onClick="deletethisRow('4')">
                             <i class="fa fa-trash"></i>
                         </button>
                     </td>
@@ -187,7 +187,7 @@
         <ul>
             <li class="submitbuttons">
                 <button type="button" class="btn btn-success" onClick="calculate()">Submit</button>
-                <button type="button" class="btn btn-primary">Add another class</button>
+                <button type="button" class="btn btn-primary" onClick="addRow()">Add another class</button>
                 <button type="button" class="btn btn-danger" onClick="reset()">Reset</button>
             </li>
         </ul>
