@@ -159,6 +159,11 @@ function addRow() {
 
   var button = document.createElement("button");
   button.setAttribute("class", "btn btn-outline-danger btn-sm");
+  button.setAttribute("id", "trash");
+  var icon = document.createElement("i");
+  icon.className = "fa fa-trash";
+  button.appendChild(icon);
+
   cell3.appendChild(button);
 
   col2.innerHTML = "Select...";
