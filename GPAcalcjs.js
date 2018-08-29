@@ -12,28 +12,26 @@ function emptyBox(idName) {
   document.getElementById(idName).style.color = "black";
 }
 
+// "this" is passed in html
+// function deletethisRow(row) {
+//   var i = row.parentNode.parentNode.rowIndex;
+//   document.getElementById("maintable").deleteRow(i);
+// }
+
 function deletethisRow(row) {
-  var i = row.parentNode.parentNode.rowIndex;
-  document.getElementById("maintable").deleteRow(i);
+  document.getElementById("course" + row).value = "Course name...";
+  document.getElementById("course" + row).style.color = "lightgray";
+
+  document.getElementById("credit" + row).value = "Credit hours (ex. 1.25)";
+  document.getElementById("credit" + row).style.color = "lightgray";
+
+  // Go back to first option in the drop down
+  document.getElementById("form" + row).selectedIndex = 0;
 }
-
-// var deleteCounter = 0;
-// function numDeleted() {
-//   var deleteCounter = deleteCounter + 1;
-//   console.log("deleteCounter:");
-//   console.log(deleteCounter);
-//   return deleteCounter;
-// }
-
-// function coursesTotal() {
-//   numDeletedRows = numDeleted();
-//   var totalCourses = 4 - numDeleted;
-//   return totalCourses;
-// }
 
 function calculate() {
   // Dictionary for grade conversions
-  var numCourses = 4;
+  var numCourses = document.getElementById("maintable").rows.length;
   console.log("numCourses:");
   console.log(numCourses); // Change later to account for people with more than four classes
   var gradeConversions = {
@@ -53,7 +51,7 @@ function calculate() {
   var i;
   var totalQualPoints = 0;
   var totalCredits = 0;
-  for (i = 1; i < numCourses + 1; i++) {
+  for (i = 1; i <= numCourses - 1; i++) {
     // Getting the numeric GPA value
     console.log("i:");
     console.log(i);
@@ -91,8 +89,8 @@ function calculate() {
 }
 
 function reset() {
-  var numCourses = 4; // Change later if there's more than one class
-  for (i = 1; i < numCourses + 1; i++) {
+  var numCourses = document.getElementById("maintable").rows.length; // Change later if there's more than one class
+  for (i = 1; i <= numCourses - 1; i++) {
     document.getElementById("course" + i).value = "Course name...";
     document.getElementById("course" + i).style.color = "lightgray";
 
