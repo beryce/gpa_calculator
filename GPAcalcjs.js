@@ -104,9 +104,11 @@ function reset() {
   }
 }
 
+var numRows = document.getElementById("maintable").rows.length;
+console.log("numRows:");
+console.log(numRows);
 function addRow() {
   var row = document.createElement("tr");
-  var col = document.createElement("td");
   var col2 = document.createElement("td");
   var col3 = document.createElement("td");
 
@@ -114,6 +116,8 @@ function addRow() {
   var classtitle = document.createElement("input");
   classtitle.setAttribute("type", "text");
   classtitle.setAttribute("value", "Course name...");
+  classtitle.setAttribute("id", "course" + numRows);
+  classtitle.setAttribute("class", "course-input");
   cell1.appendChild(classtitle);
 
   var cell2 = row.insertCell(1);
@@ -141,16 +145,25 @@ function addRow() {
     gradeselect.add(option, index);
     index = index + 1;
   }
+  gradeselect.setAttribute("id", "form" + numRows);
+  gradeselect.setAttribute("class", "form-control");
   cell2.appendChild(gradeselect);
 
   var cell3 = row.insertCell(2);
   var credit = document.createElement("input");
   credit.setAttribute("type", "text");
   credit.setAttribute("value", "Credit Hours (ex. 1.25)");
+  credit.setAttribute("id", "credit" + numRows);
+  credit.setAttribute("class", "credit-input");
   cell3.appendChild(credit);
+
+  var button = document.createElement("button");
+  button.setAttribute("class", "btn btn-outline-danger btn-sm");
+  cell3.appendChild(button);
 
   col2.innerHTML = "Select...";
   col3.innerHTML = "Credit hours (ex. 1.25)";
   var table = document.getElementById("maintable");
   table.appendChild(row);
+  numRows = numRows + 1;
 }
