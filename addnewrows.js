@@ -14,6 +14,8 @@ function addRow() {
   classtitle.setAttribute("value", "Course name...");
   classtitle.setAttribute("id", "course" + numRows);
   classtitle.setAttribute("class", "course-input");
+  emptyBoxArg1 = "course" + numRows;
+  classtitle.setAttribute("onclick", "emptyBox(emptyBoxArg1);");
   cell1.appendChild(classtitle);
   var cell2 = row.insertCell(1);
 
@@ -33,12 +35,27 @@ function addRow() {
     "F (0.00)"
   ];
 
+  var gradevalue = [
+    "Select",
+    "A",
+    "Amin",
+    "Bplus",
+    "B",
+    "Bmin",
+    "C+",
+    "C",
+    "Cmin",
+    "D",
+    "F"
+  ];
+
   // Adding the letter grade options
   var g;
   var index = 0;
   for (g = 0; g < gradelist.length; g++) {
     var option = document.createElement("option");
     option.text = gradelist[g];
+    option.value = gradevalue[g];
     gradeselect.add(option, index);
     index = index + 1;
   }
@@ -50,15 +67,19 @@ function addRow() {
   var cell3 = row.insertCell(2);
   var credit = document.createElement("input");
   credit.setAttribute("type", "text");
-  credit.setAttribute("value", "Credit Hours (ex. 1.25)");
+  credit.setAttribute("value", "Credit hours (ex. 1.25)");
   credit.setAttribute("id", "credit" + numRows);
   credit.setAttribute("class", "credit-input");
+  emptyBoxArg2 = "credit" + numRows;
+  credit.setAttribute("onclick", "emptyBox(emptyBoxArg2);");
   cell3.appendChild(credit);
 
   // Trash button
   var button = document.createElement("button");
   button.setAttribute("class", "btn btn-outline-danger btn-sm");
   button.setAttribute("id", "trash");
+  strnumrow = numRows.toString();
+  button.setAttribute("onclick", "deletethisRow(strnumrow);");
   var icon = document.createElement("i");
   icon.className = "fa fa-trash";
   button.appendChild(icon);
